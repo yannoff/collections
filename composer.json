@@ -1,0 +1,22 @@
+{
+    "name": "yannoff/collections",
+    "description": "A simple object implementation for PHP arrays",
+    "homepage": "https://github.com/yannoff/collections",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Yannoff",
+            "homepage": "https://github.com/yannoff"
+        }
+    ],
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Yannoff\\Component\\Collections\\": "src/"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.4"
+    }
+}

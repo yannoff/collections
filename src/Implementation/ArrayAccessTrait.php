@@ -1,0 +1,61 @@
+<?php
+
+namespace Yannoff\Component\Collections\Implementation;
+
+/**
+ * Trait ArrayAccessTrait
+ * Implement the methods required by the ArrayAccess interface.
+ * @see https://www.php.net/manual/en/class.arrayaccess.php
+ *
+ * @package Yannoff\Component\Collections\Implementation
+ */
+trait ArrayAccessTrait
+{
+    use BaseArrayTrait;
+
+    /**
+     * Check wether the given offset exists in the collection
+     *
+     * @param mixed $offset An offset to check for.
+     *
+     * @return boolean true on success or false on failure.
+     */
+    public function offsetExists($offset)
+    {
+        return array_key_exists($offset, $this->elements);
+    }
+
+    /**
+     * Get the element at the given offset
+     *
+     * @param mixed $offset The offset to retrieve.
+     *
+     * @return mixed
+     */
+    public function offsetGet($offset)
+    {
+        return $this->elements[$offset];
+    }
+
+    /**
+     * Set the element at the given offset
+     *
+     * @param mixed $offset The offset to assign the value to.
+     * @param mixed $value  The value to set.
+     */
+    public function offsetSet($offset, $value)
+    {
+        $this->elements[$offset] = $value;
+    }
+
+    /**
+     * Unset the element at the given offset
+     *
+     * @param mixed $offset The offset to unset.
+     */
+    public function offsetUnset($offset)
+    {
+        unset($this->elements[$offset]);
+    }
+}
+
