@@ -67,13 +67,20 @@ Array / Collection method equivalences:
 |Array|Collection|
 |-----|----------|
 |implode($glue, $array)|$collection->join($glue)|
+|array_filter($callback, $flag = 0)|$collection->filter($callback, $flag = 0)|
+|array_flip($array)|$collection->flip()|
 |array_keys($array)|$collection->keys()|
 |array_pop($array)|$collection->pop()|
 |array_push($array)|$collection->push()|
+|array_reverse($array)|$collection->reverse()|
 |array_search($needle, $array)|$collection->search($needle)|
 |array_shift($array)|$collection->shift()|
 |array_unshift($array)|$collection->unshift()|
-|array_walk($callback, $userdata = null)|$collection->walk($callback, $userdata = null)|
+|array_walk(&$array, $callback, $userdata = null)|$collection->walk($callback, $userdata = null)|
+|current(&$array)|$collection->current()|
+|end(&$array)|$collection->end()|
+|next(&$array)|$collection->next()|
+|prev(&$array)|$collection->prev()|
 
 Along with those classical PHP methods wrappers, a few _bag_ methods are provided:
 

@@ -125,6 +125,39 @@ class Collection  implements ArrayAccess, Iterator, Countable
     }
 
     /**
+     * Return all elements of the collection in reversed order.
+     *
+     * @return array
+     */
+    public function reverse()
+    {
+        return array_reverse($this->elements);
+    }
+
+    /**
+     * Flip collection: set value as keys & keys as values.
+     *
+     * @return array
+     */
+    public function flip()
+    {
+        return array_flip($this->elements);
+    }
+
+    /**
+     * Apply a user supplied function to filter elements.
+     *
+     * @param callable $callback Callback to be applied.
+     * @param int      $flag Optional user data to be passed the callback to.
+     *
+     * @return Collection[] The filtered elements collection
+     */
+    public function filter($callback, $flag = 0)
+    {
+        return array_filter($this->elements, $callback, $flag);
+    }
+
+    /**
      * Apply a user supplied function to each element of the collection.
      *
      * @param callable   $callback Callback to be applied.
@@ -135,6 +168,46 @@ class Collection  implements ArrayAccess, Iterator, Countable
     public function walk($callback, $userdata = null)
     {
         return array_walk($this->elements, $callback, $userdata);
+    }
+
+    /**
+     * Returns the element that's currently being pointed to by the internal pointer.
+     *
+     * @return mixed The current element or **false** if the internal pointer is beyond the end or collection is empty
+     */
+    public function current()
+    {
+        return current($this->elements);
+    }
+
+    /**
+     * Advances internal pointer to the last element, and returns its value
+     *
+     * @return mixed The last element or **false** if collection is empty
+     */
+    public function end()
+    {
+        return end($this->elements);
+    }
+
+    /**
+     * Rewinds the internal array pointer one place backward before returning the element
+     *
+     * @return mixed The previous place element or **false** if there are no more elements
+     */
+    public function prev()
+    {
+        return prev($this->elements);
+    }
+
+    /**
+     * Advances the internal pointer one place forward before returning the element
+     *
+     * @return mixed The next place element or **false** if there are no more elements
+     */
+    public function next()
+    {
+        return next($this->elements);
     }
 
     /**
