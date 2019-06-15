@@ -148,7 +148,12 @@ class Collection  implements ArrayAccess, Iterator, Countable
      * Apply a user supplied function to filter elements.
      *
      * @param callable $callback Callback to be applied.
-     * @param int      $flag Optional user data to be passed the callback to.
+     * @param int      $flag     Flag determining what arguments are passed to the callback.
+     *
+     * Possible values for the **$flag** parameter:
+     *    - ARRAY_FILTER_USE_KEY: pass key as the only argument to callback instead of the value.
+     *    - ARRAY_FILTER_USE_BOTH: pass both value and key as arguments to callback instead of the value.
+     * Default is 0 which will pass value as the only argument to callback instead.
      *
      * @return Collection[] The filtered elements collection
      */
