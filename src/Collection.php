@@ -127,21 +127,25 @@ class Collection  implements ArrayAccess, Iterator, Countable
     /**
      * Return all elements of the collection in reversed order.
      *
-     * @return array
+     * @return Collection
      */
     public function reverse()
     {
-        return array_reverse($this->elements);
+        $reversed = array_reverse($this->elements);
+
+        return new Collection($reversed);
     }
 
     /**
      * Flip collection: set value as keys & keys as values.
      *
-     * @return array
+     * @return Collection
      */
     public function flip()
     {
-        return array_flip($this->elements);
+        $flipped = array_flip($this->elements);
+
+        return new Collection($flipped);
     }
 
     /**
@@ -155,11 +159,13 @@ class Collection  implements ArrayAccess, Iterator, Countable
      *    - ARRAY_FILTER_USE_BOTH: pass both value and key as arguments to callback instead of the value.
      * Default is 0 which will pass value as the only argument to callback instead.
      *
-     * @return Collection[] The filtered elements collection
+     * @return Collection The filtered elements collection
      */
     public function filter($callback, $flag = 0)
     {
-        return array_filter($this->elements, $callback, $flag);
+        $filtered = array_filter($this->elements, $callback, $flag);
+
+        return new Collection($filtered);
     }
 
     /**

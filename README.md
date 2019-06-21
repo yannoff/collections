@@ -272,7 +272,7 @@ _No arguments._
 
 Type|Description
 ----|-----------
-array|
+Collection|
 
 
 ---
@@ -289,7 +289,7 @@ _No arguments._
 
 Type|Description
 ----|-----------
-array|
+Collection|
 
 
 ---
@@ -315,7 +315,7 @@ _Default is 0 which will pass value as the only argument to callback instead._
 
 Type|Description
 ----|-----------
-Collection[]|The filtered elements collection
+Collection|The filtered elements collection
 
 
 ---
