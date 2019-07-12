@@ -80,6 +80,7 @@ Array / Collection method equivalences:
 |array_push(&$array, $element)|$collection->push($element)|
 |array_reverse($array)|$collection->reverse()|
 |array_search($needle, $array)|$collection->search($needle)|
+|array_slice($array, $offset, $length)|$collection->slice($offset, $length)|
 |array_shift(&$array)|$collection->shift()|
 |array_unshift(&$array, $element)|$collection->unshift($element)|
 |array_walk(&$array, $callback, $userdata)|$collection->walk($callback, $userdata)|
@@ -159,6 +160,26 @@ _No arguments._
 Type|Description
 ----|-----------
 mixed|The popped element.
+
+
+---
+
+#### slice()
+
+_Extract a slice of $length elements from $offset-th element._
+
+##### Arguments
+
+Name|Type|Description
+----|----|-----------
+$offset|int|The element to start from
+$length|int|The number of elements to extract
+
+##### Return value
+
+Type|Description
+----|-----------
+Collection|
 
 
 ---

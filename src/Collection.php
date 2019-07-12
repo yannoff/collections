@@ -66,6 +66,21 @@ class Collection  implements ArrayAccess, Iterator, Countable
     }
 
     /**
+     * Extract a slice of $length elements from the $offset-th element.
+     *
+     * @param int $offset The element to start from
+     * @param int $length The number of elements to extract
+     *
+     * @return Collection
+     */
+    public function slice($offset = 0, $length = null)
+    {
+        $slice = array_slice($this->elements, $offset, $length);
+
+        return new Collection($slice);
+    }
+
+    /**
      * Shift an element off the beginning of the collection and return it.
      *
      * @return mixed The shifted element.
