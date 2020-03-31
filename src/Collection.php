@@ -71,13 +71,13 @@ class Collection  implements ArrayAccess, Iterator, Countable
      * @param int $offset The element to start from
      * @param int $length The number of elements to extract
      *
-     * @return Collection
+     * @return Collection The sliced version of the collection
      */
     public function slice($offset = 0, $length = null)
     {
         $slice = array_slice($this->elements, $offset, $length);
 
-        return new Collection($slice);
+        return new static($slice);
     }
 
     /**
@@ -142,25 +142,25 @@ class Collection  implements ArrayAccess, Iterator, Countable
     /**
      * Return all elements of the collection in reversed order.
      *
-     * @return Collection
+     * @return Collection The reversed version of the collection
      */
     public function reverse()
     {
         $reversed = array_reverse($this->elements);
 
-        return new Collection($reversed);
+        return new static($reversed);
     }
 
     /**
      * Flip collection: set value as keys & keys as values.
      *
-     * @return Collection
+     * @return Collection The flipped version of the collection
      */
     public function flip()
     {
         $flipped = array_flip($this->elements);
 
-        return new Collection($flipped);
+        return new static($flipped);
     }
 
     /**
@@ -174,13 +174,13 @@ class Collection  implements ArrayAccess, Iterator, Countable
      *    - ARRAY_FILTER_USE_BOTH: pass both value and key as arguments to callback instead of the value.
      * Default is 0 which will pass value as the only argument to callback instead.
      *
-     * @return Collection The filtered elements collection
+     * @return Collection The filtered version of the collection
      */
     public function filter($callback, $flag = 0)
     {
         $filtered = array_filter($this->elements, $callback, $flag);
 
-        return new Collection($filtered);
+        return new static($filtered);
     }
 
     /**
