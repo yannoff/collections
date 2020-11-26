@@ -88,6 +88,9 @@ Array / Collection method equivalences:
 |end(&$array)|$collection->end()|
 |next(&$array)|$collection->next()|
 |prev(&$array)|$collection->prev()|
+|sort(&$array)|$collection->sort()|
+|asort(&$array)|$collection->asort()|
+|ksort(&$array)|$collection->ksort()|
 
 Along with those classical PHP methods wrappers, a few _bag_ methods are provided:
 
@@ -670,6 +673,56 @@ _No arguments._
 
 _No return value._
 
+
+---
+
+#### ksort()
+
+_Sort elements by their key_
+
+##### Arguments
+
+_No arguments._
+
+##### Return value
+
+Type|Description
+----|-----------
+Collection|The collection instance.
+
+
+---
+
+#### sort()
+
+_Sort elements by their value_
+
+##### Arguments
+
+_No arguments._
+
+##### Return value
+
+Type|Description
+----|-----------
+Collection|The collection instance.
+
+
+---
+
+#### asort()
+
+_Sort elements by their value, but maintain index association_
+
+##### Arguments
+
+_No arguments._
+
+##### Return value
+
+Type|Description
+----|-----------
+Collection|The collection instance.
 
 
 ## License

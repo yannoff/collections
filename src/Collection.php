@@ -237,6 +237,49 @@ class Collection  implements ArrayAccess, Iterator, Countable
     }
 
     /**
+     * Sort the collection elements by their key
+     *
+     * @param int $flags A bitwise disjunction of sorting behavior flags
+     *
+     * @return self
+     */
+    public function ksort($flags = SORT_REGULAR)
+    {
+        ksort($this->elements, $flags);
+
+        return $this;
+    }
+
+    /**
+     * Sort the collection elements by their value
+     *
+     * @param int $flags A bitwise disjunction of sorting behavior flags
+     *
+     * @return self
+     */
+    public function sort($flags)
+    {
+        sort($this->elements, $flags);
+
+        return $this;
+    }
+
+
+    /**
+     * Sort the collection elements by their value with index associations maintained
+     *
+     * @param int $flags A bitwise disjunction of sorting behavior flags
+     *
+     * @return self
+     */
+    public function asort($flags)
+    {
+        asort($this->elements, $flags);
+
+        return $this;
+    }
+
+    /**
      * Return all the collection elements.
      *
      * @return array
