@@ -184,6 +184,21 @@ class Collection  implements ArrayAccess, Iterator, Countable
     }
 
     /**
+     * Apply a user defined mapping function to build a new collection.
+     *
+     * @param callable   $callback  Callback to be applied.
+     * @param array|null ...$arrays Supplementary variable list of array arguments to run through the callback function.
+     *
+     * @return Collection The mapped collection
+     */
+    public function map($callback, ...$arrays)
+    {
+        $mapped = array_map($callback, $this->elements, ...$arrays);
+
+        return new static($mapped);
+    }
+
+    /**
      * Apply a user supplied function to each element of the collection.
      *
      * @param callable   $callback Callback to be applied.
