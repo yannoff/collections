@@ -295,6 +295,20 @@ class Collection  implements ArrayAccess, Iterator, Countable
     }
 
     /**
+     * Removes duplicate values from the collection
+     *
+     * @param int $flags A bitwise disjunction of flags to modify the comparing behavior. 
+     *
+     * @return Collection The filtered collection
+     */
+    public function unique($flags = SORT_STRING)
+    {
+        $elements = array_unique($this->elements, $flags);
+
+        return new static($elements);
+    }
+
+    /**
      * Return all the collection elements.
      *
      * @return array

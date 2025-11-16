@@ -83,6 +83,7 @@ Array / Collection method equivalences:
 |array_search($needle, $array)|$collection->search($needle)|
 |array_slice($array, $offset, $length)|$collection->slice($offset, $length)|
 |array_shift(&$array)|$collection->shift()|
+|array_unique($array, $flags)|$collection->unique($flags)|
 |array_unshift(&$array, $element)|$collection->unshift($element)|
 |array_walk(&$array, $callback, $userdata)|$collection->walk($callback, $userdata)|
 |current(&$array)|$collection->current()|
@@ -361,6 +362,33 @@ $callback|callable|Callback to be applied.
 Type|Description
 ----|-----------
 Collection|The mapped collection
+
+---
+
+#### unique()
+
+_Removes duplicate values from  the collection._
+
+##### Arguments
+
+Name|Type|Description
+----|----|-----------
+$flags|int|A bitwise disjunction of flags to modify the comparing behavior.
+
+_Available values that can be used for the **$flags** parameter:_
+- *`SORT_REGULAR` - compare items normally (don't change types)*
+- *`SORT_NUMERIC` - compare items numerically*
+- *`SORT_STRING` - compare items as strings*
+- *`SORT_LOCALE_STRING` - compare items as strings, based on the current locale.*
+
+*Default value for the flags is `SORT_STRING`*
+
+##### Return value
+
+Type|Description
+----|-----------
+Collection|The filtered elements collection
+
 
 ---
 
