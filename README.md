@@ -76,6 +76,7 @@ Array / Collection method equivalences:
 |array_filter($array, $callback, $flag)|$collection->filter($callback, $flag)|
 |array_flip($array)|$collection->flip()|
 |array_keys($array)|$collection->keys()|
+|array_map($callback, $array, ..$arrays)|$collection->map($callback, ...$arrays)|
 |array_pop(&$array)|$collection->pop()|
 |array_push(&$array, $element)|$collection->push($element)|
 |array_reverse($array)|$collection->reverse()|
@@ -341,6 +342,25 @@ Type|Description
 ----|-----------
 Collection|The filtered elements collection
 
+
+---
+
+#### map()
+
+_Apply a user defined mapping function to build a new collection.
+
+##### Arguments
+
+Name|Type|Description
+----|----|-----------
+$callback|callable|Callback to be applied.
+...$arrays|...array|null|Supplementary variable list of array arguments to run through the callback function.
+
+##### Return value
+
+Type|Description
+----|-----------
+Collection|The mapped collection
 
 ---
 
