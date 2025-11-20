@@ -13,6 +13,8 @@
 
 namespace Yannoff\Component\Collections\Implementation;
 
+use ReturnTypeWillChange;
+
 /**
  * Trait IteratorTrait
  * Implement the methods required by the Iterator interface.
@@ -25,21 +27,47 @@ trait IteratorTrait
     use BaseArrayTrait;
 
     /**
-     * Return the current element
+     * Returns the element that's currently being pointed to by the internal pointer.
      *
-     * @return mixed
+     * @return mixed The current element or **false** if the internal pointer is beyond the end or collection is empty
      */
+    #[ReturnTypeWillChange]
     public function current()
     {
         return current($this->elements);
     }
 
     /**
-     * Move forward to next element and return it
+     * Advances the internal pointer one place forward before returning the element
+     *
+     * @return mixed The next place element or **false** if there are no more elements
      */
+    #[ReturnTypeWillChange]
     public function next()
     {
         return next($this->elements);
+    }
+
+    /**
+     * Rewinds the internal array pointer one place backward before returning the element
+     *
+     * @return mixed The previous place element or **false** if there are no more elements
+     */
+    #[ReturnTypeWillChange]
+    public function prev()
+    {
+        return prev($this->elements);
+    }
+
+    /**
+     * Advances internal pointer to the last element, and returns its value
+     *
+     * @return mixed The last element or **false** if collection is empty
+     */
+    #[ReturnTypeWillChange]
+    public function end()
+    {
+        return end($this->elements);
     }
 
     /**
@@ -47,6 +75,7 @@ trait IteratorTrait
      *
      * @return mixed scalar on success, or null on failure.
      */
+    #[ReturnTypeWillChange]
     public function key()
     {
         return key($this->elements);
@@ -57,6 +86,7 @@ trait IteratorTrait
      *
      * @return boolean true on success or false on failure.
      */
+    #[ReturnTypeWillChange]
     public function valid()
     {
         return (null !== $this->key());
@@ -65,6 +95,7 @@ trait IteratorTrait
     /**
      * Rewind the Iterator to the first element
      */
+    #[ReturnTypeWillChange]
     public function rewind()
     {
         reset($this->elements);

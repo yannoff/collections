@@ -13,6 +13,8 @@
 
 namespace Yannoff\Component\Collections\Implementation;
 
+use ReturnTypeWillChange;
+
 /**
  * Trait ArrayAccessTrait
  * Implement the methods required by the ArrayAccess interface.
@@ -31,6 +33,7 @@ trait ArrayAccessTrait
      *
      * @return boolean true on success or false on failure.
      */
+    #[ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return array_key_exists($offset, $this->elements);
@@ -43,6 +46,7 @@ trait ArrayAccessTrait
      *
      * @return mixed
      */
+    #[ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->elements[$offset];
@@ -54,6 +58,7 @@ trait ArrayAccessTrait
      * @param mixed $offset The offset to assign the value to.
      * @param mixed $value  The value to set.
      */
+    #[ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         $this->elements[$offset] = $value;
@@ -64,6 +69,7 @@ trait ArrayAccessTrait
      *
      * @param mixed $offset The offset to unset.
      */
+    #[ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->elements[$offset]);
