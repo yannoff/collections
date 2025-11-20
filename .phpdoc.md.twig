@@ -1,0 +1,161 @@
+{% block header %}
+    [&laquo; Back to README](/README.md)
+{% endblock header %}
+
+{% block body %}
+{% set fqn = reflected.name %}
+{% set class = reflected.shortname %}
+{% set type = reflected.classType %}
+
+{% block title %}
+
+# {{ class }} method list
+
+## Synopsis
+
+```php
+use {{ fqn }};
+```
+{% endblock title %}
+
+{% if methods|length > 0 %}
+    {% block methods %}
+
+    {% for name, method in methods %}
+        {% block method %}
+
+        ## <a name="{{ name }}">`{{ class }}::{{ name }}()`</a>
+
+        {% block method_synopsis %}
+        ```php
+        {{ class }}::{{ name }}(
+            {%- if method.tags.param is defined and method.tags.param.count() > 0 -%}
+                {%- for arg in method.tags.param.all() -%}
+                    {{ arg.type }} {{ arg.var }}
+                    {%- if not loop.last %}, {% endif -%}
+                {%- endfor -%}
+            {%- endif -%})
+        ```
+        {% endblock method_synopsis %}
+
+        {% block method_description %}
+            {{ _self.renderHelp(method.help) }}
+        {%- endblock method_description %}
+
+        {% block method_deprecation %}
+            {% if method.tags.deprecated|length > 0 %}
+                > *__deprecated__ {{ method.tags.deprecated }}*
+            {% endif %}
+        {% endblock method_deprecation %}
+        {% block method_access %}
+            > access: {{ method.object.access }} <br/>
+        {% endblock method_access %}
+        {% block method_from %}
+            {% if method.object.isOverridden() %}
+                {% set definitionClass = method.object.getFirstParentDeclaringClass().shortname %}
+                > overridden from: {{ renderLink(method.object, definitionClass, method.object.name) }} <br/>
+            {% elseif method.object.isInherited() -%}
+                {% set definitionClass = method.object.definitionClass.shortname %}
+                > inherited from: {{ renderLink(method.object, definitionClass, method.object.name) }} <br/>
+            {% endif %}
+        {% endblock method_from %}
+
+        {% block method_arguments %}
+        ### Arguments
+        
+        {% if method.tags.param is defined and method.tags.param.count() > 0 %}
+            {% set args = method.tags.param %}
+            Name|Type|Description
+            ----|----|-----------
+            {% for p in args.all() %}
+                {% block method_argument %}
+                {{ p.var }}|
+                {%- for type in p.type|split("|") -%}
+                    {{ renderLink(method.object, type) }}
+                    {%- if not loop.last %} &#124; {% endif -%}
+                {%- endfor -%}
+                |{{ p.description.join("<br/>")|raw }}
+                {% endblock method_argument %}
+            {% endfor %}
+        {% else %}
+            >_No arguments._
+        {% endif %}
+        {% endblock method_arguments %}
+
+        {% block method_return %}
+        ### Return value
+
+        {% if method.tags.return is defined and method.tags.return|length > 0 %}
+            {%- set r = method.tags.return[0] -%}
+
+            {% block method_return_description %}
+            {%- if r.description.count() > 0 -%}
+                _{{ r.description.join("_\n<br/>_")|raw|spaceless }}_
+            {% endif %}
+            {% endblock method_return_description %}
+
+            {% block method_return_type %}
+            > type: {#nbsp#}
+            {%- for type in r.type|split("|") -%}
+                {{ renderLink(method.object, type) }}
+                {%- if not loop.last %} **&#124;** {% endif -%}
+            {%- endfor -%}
+            {% endblock method_return_type %}
+
+        {% else %}
+            >_No return value._
+        {% endif %}
+        {% endblock method_return %}
+
+        {% if method.tags.throws is defined and method.tags.throws.count() > 0 %}
+
+            {% block method_exceptions %}
+            ### Exceptions
+
+            Type|Description
+            ----|-----------
+            {% for p in method.tags.throws %}
+                {% block method_exception %}
+                {%- for type in p.type|split("|") -%}
+                    {{ renderLink(method.object, type) }}
+                    {%- if not loop.last %} &#124; {% endif -%}
+                {%- endfor -%}
+                |{{ p.description.join("<br/>")|raw }}
+                {% endblock method_exception %}
+            {% endfor %}
+            {% endblock method_exceptions %}
+        {% endif %}
+        
+        {% endblock method %}
+        <br/><br/>
+    {% endfor %}
+    {% endblock methods %}
+{% endif %}
+
+
+[self]: {{ class }}.md
+{% for name, url in getPHPLinks() %}
+    [php:{{ name }}]: {{ url }} "PHP Built-in: {{ name }}"
+{% endfor %}
+{% endblock body %}
+
+{% block footer %}
+    [&laquo; Back to README](/README.md)
+{% endblock footer %}
+
+{% block css %}
+{% endblock css %}
+<!-- Generated: {{ "now"|date("Y-m-d H:i:s P") }} -->
+
+
+{%- macro renderHelp(lines) -%}
+{%- if lines|length > 0 -%}
+    {%- for line in lines %}
+        {% if line|length > 0 %}
+            {{ line|formatHelp|raw }}
+        {% else %}
+
+        {% endif %}
+    {% endfor -%}
+{%- endif -%}
+{%- endmacro renderHelp %}

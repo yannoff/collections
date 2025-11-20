@@ -171,9 +171,10 @@ class Collection  implements ArrayAccess, Iterator, Countable
      * @param int      $flag     Flag determining what arguments are passed to the callback.
      *
      * Possible values for the **$flag** parameter:
-     *    - ARRAY_FILTER_USE_KEY: pass key as the only argument to callback instead of the value.
-     *    - ARRAY_FILTER_USE_BOTH: pass both value and key as arguments to callback instead of the value.
-     * Default is 0 which will pass value as the only argument to callback instead.
+     *    - `ARRAY_FILTER_USE_KEY` : pass key as the only argument to callback instead of the value.
+     *    - `ARRAY_FILTER_USE_BOTH` : pass both value and key as arguments to callback instead of the value.
+     *
+     * Default is `0` which will pass value as the only argument to callback instead.
      *
      * @return Collection The filtered version of the collection
      */
@@ -259,6 +260,14 @@ class Collection  implements ArrayAccess, Iterator, Countable
      * Removes duplicate values from the collection
      *
      * @param int $flags A bitwise disjunction of flags to modify the comparing behavior. 
+     *
+     * Available values that can be used for the **$flags** parameter:
+     *   - `SORT_REGULAR` - compare items normally (don't change types)
+     *   - `SORT_NUMERIC` - compare items numerically
+     *   - `SORT_STRING` - compare items as strings
+     *   - `SORT_LOCALE_STRING` - compare items as strings, based on the current locale.
+     *
+     * Default value for the flags is `SORT_STRING`
      *
      * @return Collection The filtered collection
      */
