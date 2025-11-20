@@ -16,6 +16,7 @@ namespace Yannoff\Component\Collections;
 use ArrayAccess;
 use Countable;
 use Iterator;
+use returntypewillchange;
 use Yannoff\Component\Collections\Implementation\ArrayAccessTrait;
 use Yannoff\Component\Collections\Implementation\BaseArrayTrait;
 use Yannoff\Component\Collections\Implementation\CountableTrait;
@@ -209,46 +210,6 @@ class Collection  implements ArrayAccess, Iterator, Countable
     public function walk($callback, $userdata = null)
     {
         return array_walk($this->elements, $callback, $userdata);
-    }
-
-    /**
-     * Returns the element that's currently being pointed to by the internal pointer.
-     *
-     * @return mixed The current element or **false** if the internal pointer is beyond the end or collection is empty
-     */
-    public function current()
-    {
-        return current($this->elements);
-    }
-
-    /**
-     * Advances internal pointer to the last element, and returns its value
-     *
-     * @return mixed The last element or **false** if collection is empty
-     */
-    public function end()
-    {
-        return end($this->elements);
-    }
-
-    /**
-     * Rewinds the internal array pointer one place backward before returning the element
-     *
-     * @return mixed The previous place element or **false** if there are no more elements
-     */
-    public function prev()
-    {
-        return prev($this->elements);
-    }
-
-    /**
-     * Advances the internal pointer one place forward before returning the element
-     *
-     * @return mixed The next place element or **false** if there are no more elements
-     */
-    public function next()
-    {
-        return next($this->elements);
     }
 
     /**

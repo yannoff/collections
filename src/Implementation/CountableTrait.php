@@ -13,6 +13,8 @@
 
 namespace Yannoff\Component\Collections\Implementation;
 
+use ReturnTypeWillChange;
+
 /**
  * Trait CountableTrait
  * Implement the methods required by the Countable interface.
@@ -29,6 +31,7 @@ trait CountableTrait
      *
      * @return int The custom count as an integer.
      */
+    #[ReturnTypeWillChange]
     public function count()
     {
         return count($this->elements);
