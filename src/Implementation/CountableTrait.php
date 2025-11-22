@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the yannoff/collections library
  * (c) 2019 Yannoff (https://github.com/yannoff)

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the yannoff/collections library
  * (c) 2019 Yannoff (https://github.com/yannoff)
@@ -27,7 +28,7 @@ use Yannoff\Component\Collections\Implementation\IteratorTrait;
  *
  * @package Yannoff\Component\Collections
  */
-class Collection  implements ArrayAccess, Iterator, Countable
+class Collection implements ArrayAccess, Iterator, Countable
 {
     use BaseArrayTrait;
     use ArrayAccessTrait;
