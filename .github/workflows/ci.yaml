@@ -1,0 +1,28 @@
+# vim: ts=4 sw=4 sts=4 retab
+
+name: Run checks
+
+on:
+    - push
+
+env:
+    COMPOSER_ROOT_VERSION: 2.2.5
+
+jobs:
+    coding-standards:
+        name: Coding standards
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Install PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: latest
+                  coverage: none
+                  tools: phpcs
+
+            - name: Check coding standards (PHP_CodeSniffer)
+              run: phpcs ./src
+
