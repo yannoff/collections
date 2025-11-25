@@ -64,7 +64,7 @@ $element|[mixed][php:mixed]|Element to add.
 ## <a name="all">`Collection::all()`</a>
 
 ```php
-Collection::all()
+Collection::all(): array
 ```
 
 *Return all the collection elements.*</br>
@@ -87,7 +87,7 @@ Collection::all()
 ## <a name="asort">`Collection::asort()`</a>
 
 ```php
-Collection::asort(int $flags)
+Collection::asort(int $flags): self
 ```
 
 *Sort the collection elements by their value with index associations maintained*</br>
@@ -133,7 +133,7 @@ Collection::clear()
 ## <a name="count">`Collection::count()`</a>
 
 ```php
-Collection::count()
+Collection::count(): int
 ```
 
 *Return elements count in the collection*</br>
@@ -158,7 +158,7 @@ _The custom count as an integer._
 ## <a name="current">`Collection::current()`</a>
 
 ```php
-Collection::current()
+Collection::current(): mixed
 ```
 
 *Returns the element that's currently being pointed to by the internal pointer.*</br>
@@ -183,7 +183,7 @@ _The current element or **false** if the internal pointer is beyond the end or c
 ## <a name="end">`Collection::end()`</a>
 
 ```php
-Collection::end()
+Collection::end(): mixed
 ```
 
 *Advances internal pointer to the last element, and returns its value*</br>
@@ -208,7 +208,7 @@ _The last element or **false** if collection is empty_
 ## <a name="filter">`Collection::filter()`</a>
 
 ```php
-Collection::filter(callable $callback, int $flag)
+Collection::filter(callable $callback, int $flag): Collection
 ```
 
 *Apply a user supplied function to filter elements.*</br>
@@ -235,7 +235,7 @@ _The filtered version of the collection_
 ## <a name="flip">`Collection::flip()`</a>
 
 ```php
-Collection::flip()
+Collection::flip(): Collection
 ```
 
 *Flip collection: set value as keys & keys as values.*</br>
@@ -259,7 +259,7 @@ _The flipped version of the collection_
 ## <a name="get">`Collection::get()`</a>
 
 ```php
-Collection::get(mixed $key)
+Collection::get(mixed $key): mixed
 ```
 
 *Get an element of the collection by its key.*</br>
@@ -284,7 +284,7 @@ $key|[mixed][php:mixed]|The requested element's key.<br/>
 ## <a name="has">`Collection::has()`</a>
 
 ```php
-Collection::has(mixed $key)
+Collection::has(mixed $key): bool
 ```
 
 *Check for existence of the given key in the collection.*</br>
@@ -310,7 +310,7 @@ _true if the key is found, false otherwise._
 ## <a name="join">`Collection::join()`</a>
 
 ```php
-Collection::join(string $glue)
+Collection::join(string $glue): string
 ```
 
 *Build a string by concatening all elements with the given glue.*</br>
@@ -335,7 +335,7 @@ $glue|[string][php:string]|The concatening string.<br/>
 ## <a name="key">`Collection::key()`</a>
 
 ```php
-Collection::key()
+Collection::key(): mixed
 ```
 
 *Return the key of the current element*</br>
@@ -360,7 +360,7 @@ _scalar on success, or null on failure._
 ## <a name="keys">`Collection::keys()`</a>
 
 ```php
-Collection::keys()
+Collection::keys(): array
 ```
 
 *Return all the keys of the collection.*</br>
@@ -384,7 +384,7 @@ Collection::keys()
 ## <a name="ksort">`Collection::ksort()`</a>
 
 ```php
-Collection::ksort(int $flags)
+Collection::ksort(int $flags): self
 ```
 
 *Sort the collection elements by their key*</br>
@@ -409,7 +409,7 @@ $flags|[int][php:int]|A bitwise disjunction of sorting behavior flags<br/>
 ## <a name="map">`Collection::map()`</a>
 
 ```php
-Collection::map(callable $callback, array|null ...$arrays)
+Collection::map(callable $callback, array|null ...$arrays): Collection
 ```
 
 *Apply a user defined mapping function to build a new collection.*</br>
@@ -436,7 +436,7 @@ _The mapped collection_
 ## <a name="next">`Collection::next()`</a>
 
 ```php
-Collection::next()
+Collection::next(): mixed
 ```
 
 *Advances the internal pointer one place forward before returning the element*</br>
@@ -461,7 +461,7 @@ _The next place element or **false** if there are no more elements_
 ## <a name="offsetExists">`Collection::offsetExists()`</a>
 
 ```php
-Collection::offsetExists(mixed $offset)
+Collection::offsetExists(mixed $offset): boolean
 ```
 
 *Check wether the given offset exists in the collection*</br>
@@ -488,7 +488,7 @@ _true on success or false on failure._
 ## <a name="offsetGet">`Collection::offsetGet()`</a>
 
 ```php
-Collection::offsetGet(mixed $offset)
+Collection::offsetGet(mixed $offset): mixed
 ```
 
 *Get the element at the given offset*</br>
@@ -565,7 +565,7 @@ $offset|[mixed][php:mixed]|The offset to unset.
 ## <a name="pop">`Collection::pop()`</a>
 
 ```php
-Collection::pop()
+Collection::pop(): mixed
 ```
 
 *Pop the element of the end of the collection and return it.*</br>
@@ -589,7 +589,7 @@ _The popped element._
 ## <a name="prev">`Collection::prev()`</a>
 
 ```php
-Collection::prev()
+Collection::prev(): mixed
 ```
 
 *Rewinds the internal array pointer one place backward before returning the element*</br>
@@ -614,7 +614,7 @@ _The previous place element or **false** if there are no more elements_
 ## <a name="push">`Collection::push()`</a>
 
 ```php
-Collection::push(mixed $element)
+Collection::push(mixed $element): int
 ```
 
 *Push one element onto the end of the collection.*</br>
@@ -640,7 +640,7 @@ _The new number of elements in the collection._
 ## <a name="reverse">`Collection::reverse()`</a>
 
 ```php
-Collection::reverse()
+Collection::reverse(): Collection
 ```
 
 *Return all elements of the collection in reversed order.*</br>
@@ -686,7 +686,7 @@ Collection::rewind()
 ## <a name="search">`Collection::search()`</a>
 
 ```php
-Collection::search(mixed $needle)
+Collection::search(mixed $needle): false|int|string
 ```
 
 *Search the collection for a given value and returns the first corresponding key if successful.*</br>
@@ -737,7 +737,7 @@ $elements|[array][php:array]|An elements array.
 ## <a name="shift">`Collection::shift()`</a>
 
 ```php
-Collection::shift()
+Collection::shift(): mixed
 ```
 
 *Shift an element off the beginning of the collection and return it.*</br>
@@ -761,7 +761,7 @@ _The shifted element._
 ## <a name="slice">`Collection::slice()`</a>
 
 ```php
-Collection::slice(int $offset, int $length)
+Collection::slice(int $offset, int $length): Collection
 ```
 
 *Extract a slice of $length elements from the $offset-th element.*</br>
@@ -788,7 +788,7 @@ _The sliced version of the collection_
 ## <a name="sort">`Collection::sort()`</a>
 
 ```php
-Collection::sort(int $flags)
+Collection::sort(int $flags): self
 ```
 
 *Sort the collection elements by their value*</br>
@@ -813,7 +813,7 @@ $flags|[int][php:int]|A bitwise disjunction of sorting behavior flags<br/>
 ## <a name="unique">`Collection::unique()`</a>
 
 ```php
-Collection::unique(int $flags)
+Collection::unique(int $flags): Collection
 ```
 
 *Removes duplicate values from the collection*</br>
@@ -839,7 +839,7 @@ _The filtered collection_
 ## <a name="unshift">`Collection::unshift()`</a>
 
 ```php
-Collection::unshift(mixed $element)
+Collection::unshift(mixed $element): int
 ```
 
 *Prepend an element to the beginning of the collection.*</br>
@@ -866,7 +866,7 @@ _The new number of elements in the collection._
 ## <a name="valid">`Collection::valid()`</a>
 
 ```php
-Collection::valid()
+Collection::valid(): boolean
 ```
 
 *Checks if current position is valid*</br>
@@ -891,7 +891,7 @@ _true on success or false on failure._
 ## <a name="walk">`Collection::walk()`</a>
 
 ```php
-Collection::walk(callable $callback, mixed|null $userdata)
+Collection::walk(callable $callback, mixed|null $userdata): bool
 ```
 
 *Apply a user supplied function to each element of the collection.*</br>
@@ -953,4 +953,4 @@ _(always true)_
 
 [&laquo; Back to README](/README.md)
 
-<!-- Generated: 2025-11-21 12:56:43 +01:00 -->
+<!-- Generated: 2025-11-25 18:47:26 +01:00 -->

@@ -35,6 +35,12 @@ use {{ fqn }};
                     {%- if not loop.last %}, {% endif -%}
                 {%- endfor -%}
             {%- endif -%})
+            {%- if method.tags.return is defined and method.tags.return|length > 0 -%}
+                : {% set r = method.tags.return[0] -%}
+                {{ r.type }}
+            {% else %}
+
+            {% endif %}
         ```
         {% endblock method_synopsis %}
 

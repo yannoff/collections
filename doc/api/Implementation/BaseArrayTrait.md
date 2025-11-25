@@ -49,4 +49,4 @@ use Yannoff\Component\Collections\Implementation\BaseArrayTrait;
 
 [&laquo; Back to README](/README.md)
 
-<!-- Generated: 2025-11-21 12:56:43 +01:00 -->
+<!-- Generated: 2025-11-25 18:47:26 +01:00 -->

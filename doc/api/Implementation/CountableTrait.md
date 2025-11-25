@@ -15,7 +15,7 @@ use Yannoff\Component\Collections\Implementation\CountableTrait;
 ## <a name="count">`CountableTrait::count()`</a>
 
 ```php
-CountableTrait::count()
+CountableTrait::count(): int
 ```
 
 *Return elements count in the collection*</br>
@@ -74,4 +74,4 @@ _The custom count as an integer._
 
 [&laquo; Back to README](/README.md)
 
-<!-- Generated: 2025-11-21 12:56:43 +01:00 -->
+<!-- Generated: 2025-11-25 18:47:26 +01:00 -->

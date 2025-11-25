@@ -15,7 +15,7 @@ use Yannoff\Component\Collections\Implementation\IteratorTrait;
 ## <a name="current">`IteratorTrait::current()`</a>
 
 ```php
-IteratorTrait::current()
+IteratorTrait::current(): mixed
 ```
 
 *Returns the element that's currently being pointed to by the internal pointer.*</br>
@@ -39,7 +39,7 @@ _The current element or **false** if the internal pointer is beyond the end or c
 ## <a name="end">`IteratorTrait::end()`</a>
 
 ```php
-IteratorTrait::end()
+IteratorTrait::end(): mixed
 ```
 
 *Advances internal pointer to the last element, and returns its value*</br>
@@ -63,7 +63,7 @@ _The last element or **false** if collection is empty_
 ## <a name="key">`IteratorTrait::key()`</a>
 
 ```php
-IteratorTrait::key()
+IteratorTrait::key(): mixed
 ```
 
 *Return the key of the current element*</br>
@@ -87,7 +87,7 @@ _scalar on success, or null on failure._
 ## <a name="next">`IteratorTrait::next()`</a>
 
 ```php
-IteratorTrait::next()
+IteratorTrait::next(): mixed
 ```
 
 *Advances the internal pointer one place forward before returning the element*</br>
@@ -111,7 +111,7 @@ _The next place element or **false** if there are no more elements_
 ## <a name="prev">`IteratorTrait::prev()`</a>
 
 ```php
-IteratorTrait::prev()
+IteratorTrait::prev(): mixed
 ```
 
 *Rewinds the internal array pointer one place backward before returning the element*</br>
@@ -156,7 +156,7 @@ IteratorTrait::rewind()
 ## <a name="valid">`IteratorTrait::valid()`</a>
 
 ```php
-IteratorTrait::valid()
+IteratorTrait::valid(): boolean
 ```
 
 *Checks if current position is valid*</br>
@@ -215,4 +215,4 @@ _true on success or false on failure._
 
 [&laquo; Back to README](/README.md)
 
-<!-- Generated: 2025-11-21 12:56:43 +01:00 -->
+<!-- Generated: 2025-11-25 18:47:26 +01:00 -->

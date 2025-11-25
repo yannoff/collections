@@ -15,7 +15,7 @@ use Yannoff\Component\Collections\Factory;
 ## <a name="create">`Factory::create()`</a>
 
 ```php
-Factory::create(array $elements, string $class)
+Factory::create(array $elements, string $class): Collection
 ```
 
 *Main factory entrypoint method.*</br>
@@ -48,7 +48,7 @@ Type|Description
 ## <a name="explode">`Factory::explode()`</a>
 
 ```php
-Factory::explode(string $delimiter, string $string, string $class, int $limit)
+Factory::explode(string $delimiter, string $string, string $class, int $limit): Collection
 ```
 
 *Build a collection by splitting the string on boundaries formed by the delimiter*</br>
@@ -76,7 +76,7 @@ $limit|[int][php:int]|Optionally limit elements with the last element containing
 ## <a name="filter">`Factory::filter()`</a>
 
 ```php
-Factory::filter(array $elements, callable $callback, string $class, int $flag)
+Factory::filter(array $elements, callable $callback, string $class, int $flag): Collection
 ```
 
 *Build a collection from the source array by applying the given filter .*</br>
@@ -140,4 +140,4 @@ _The filtered elements collection_
 
 [&laquo; Back to README](/README.md)
 
-<!-- Generated: 2025-11-21 12:56:43 +01:00 -->
+<!-- Generated: 2025-11-25 18:47:26 +01:00 -->

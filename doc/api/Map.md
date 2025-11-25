@@ -66,7 +66,7 @@ $element|[mixed][php:mixed]|Element to add.
 ## <a name="all">`Map::all()`</a>
 
 ```php
-Map::all()
+Map::all(): array
 ```
 
 *Return all the collection elements.*</br>
@@ -90,7 +90,7 @@ Map::all()
 ## <a name="asort">`Map::asort()`</a>
 
 ```php
-Map::asort(int $flags)
+Map::asort(int $flags): self
 ```
 
 *Sort the collection elements by their value with index associations maintained*</br>
@@ -138,7 +138,7 @@ Map::clear()
 ## <a name="count">`Map::count()`</a>
 
 ```php
-Map::count()
+Map::count(): int
 ```
 
 *Return elements count in the collection*</br>
@@ -163,7 +163,7 @@ _The custom count as an integer._
 ## <a name="current">`Map::current()`</a>
 
 ```php
-Map::current()
+Map::current(): mixed
 ```
 
 *Returns the element that's currently being pointed to by the internal pointer.*</br>
@@ -188,7 +188,7 @@ _The current element or **false** if the internal pointer is beyond the end or c
 ## <a name="end">`Map::end()`</a>
 
 ```php
-Map::end()
+Map::end(): mixed
 ```
 
 *Advances internal pointer to the last element, and returns its value*</br>
@@ -213,7 +213,7 @@ _The last element or **false** if collection is empty_
 ## <a name="filter">`Map::filter()`</a>
 
 ```php
-Map::filter(callable $callback, int $flag)
+Map::filter(callable $callback, int $flag): Collection
 ```
 
 *Apply a user supplied function to filter elements.*</br>
@@ -241,7 +241,7 @@ _The filtered version of the collection_
 ## <a name="flip">`Map::flip()`</a>
 
 ```php
-Map::flip()
+Map::flip(): Collection
 ```
 
 *Flip collection: set value as keys & keys as values.*</br>
@@ -266,7 +266,7 @@ _The flipped version of the collection_
 ## <a name="get">`Map::get()`</a>
 
 ```php
-Map::get(mixed $key)
+Map::get(mixed $key): mixed
 ```
 
 *Get an element of the collection by its key.*</br>
@@ -292,7 +292,7 @@ $key|[mixed][php:mixed]|The requested element's key.<br/>
 ## <a name="has">`Map::has()`</a>
 
 ```php
-Map::has(mixed $key)
+Map::has(mixed $key): bool
 ```
 
 *Check for existence of the given key in the collection.*</br>
@@ -319,7 +319,7 @@ _true if the key is found, false otherwise._
 ## <a name="join">`Map::join()`</a>
 
 ```php
-Map::join(string $glue)
+Map::join(string $glue): string
 ```
 
 *Build a string by concatening all elements with the given glue.*</br>
@@ -345,7 +345,7 @@ $glue|[string][php:string]|The concatening string.<br/>
 ## <a name="key">`Map::key()`</a>
 
 ```php
-Map::key()
+Map::key(): mixed
 ```
 
 *Return the key of the current element*</br>
@@ -370,7 +370,7 @@ _scalar on success, or null on failure._
 ## <a name="keys">`Map::keys()`</a>
 
 ```php
-Map::keys()
+Map::keys(): array
 ```
 
 *Return all the keys of the collection.*</br>
@@ -395,7 +395,7 @@ Map::keys()
 ## <a name="ksort">`Map::ksort()`</a>
 
 ```php
-Map::ksort(int $flags)
+Map::ksort(int $flags): self
 ```
 
 *Sort the collection elements by their key*</br>
@@ -421,7 +421,7 @@ $flags|[int][php:int]|A bitwise disjunction of sorting behavior flags<br/>
 ## <a name="map">`Map::map()`</a>
 
 ```php
-Map::map(callable $callback, array|null ...$arrays)
+Map::map(callable $callback, array|null ...$arrays): Collection
 ```
 
 *Apply a user defined mapping function to build a new collection.*</br>
@@ -449,7 +449,7 @@ _The mapped collection_
 ## <a name="next">`Map::next()`</a>
 
 ```php
-Map::next()
+Map::next(): mixed
 ```
 
 *Advances the internal pointer one place forward before returning the element*</br>
@@ -474,7 +474,7 @@ _The next place element or **false** if there are no more elements_
 ## <a name="offsetExists">`Map::offsetExists()`</a>
 
 ```php
-Map::offsetExists(mixed $offset)
+Map::offsetExists(mixed $offset): boolean
 ```
 
 *Check wether the given offset exists in the collection*</br>
@@ -501,7 +501,7 @@ _true on success or false on failure._
 ## <a name="offsetGet">`Map::offsetGet()`</a>
 
 ```php
-Map::offsetGet(mixed $offset)
+Map::offsetGet(mixed $offset): mixed
 ```
 
 *Get the element at the given offset*</br>
@@ -578,7 +578,7 @@ $offset|[mixed][php:mixed]|The offset to unset.
 ## <a name="pop">`Map::pop()`</a>
 
 ```php
-Map::pop()
+Map::pop(): mixed
 ```
 
 *Pop the element of the end of the collection and return it.*</br>
@@ -603,7 +603,7 @@ _The popped element._
 ## <a name="prev">`Map::prev()`</a>
 
 ```php
-Map::prev()
+Map::prev(): mixed
 ```
 
 *Rewinds the internal array pointer one place backward before returning the element*</br>
@@ -628,7 +628,7 @@ _The previous place element or **false** if there are no more elements_
 ## <a name="push">`Map::push()`</a>
 
 ```php
-Map::push(mixed $element)
+Map::push(mixed $element): int
 ```
 
 *Push one element onto the end of the collection.*</br>
@@ -655,7 +655,7 @@ _The new number of elements in the collection._
 ## <a name="reverse">`Map::reverse()`</a>
 
 ```php
-Map::reverse()
+Map::reverse(): Collection
 ```
 
 *Return all elements of the collection in reversed order.*</br>
@@ -702,7 +702,7 @@ Map::rewind()
 ## <a name="search">`Map::search()`</a>
 
 ```php
-Map::search(mixed $needle)
+Map::search(mixed $needle): false|int|string
 ```
 
 *Search the collection for a given value and returns the first corresponding key if successful.*</br>
@@ -755,7 +755,7 @@ $elements|[array][php:array]|An elements array.
 ## <a name="shift">`Map::shift()`</a>
 
 ```php
-Map::shift()
+Map::shift(): mixed
 ```
 
 *Shift an element off the beginning of the collection and return it.*</br>
@@ -780,7 +780,7 @@ _The shifted element._
 ## <a name="slice">`Map::slice()`</a>
 
 ```php
-Map::slice(int $offset, int $length)
+Map::slice(int $offset, int $length): Collection
 ```
 
 *Extract a slice of $length elements from the $offset-th element.*</br>
@@ -808,7 +808,7 @@ _The sliced version of the collection_
 ## <a name="sort">`Map::sort()`</a>
 
 ```php
-Map::sort(int $flags)
+Map::sort(int $flags): self
 ```
 
 *Sort the collection elements by their value*</br>
@@ -834,7 +834,7 @@ $flags|[int][php:int]|A bitwise disjunction of sorting behavior flags<br/>
 ## <a name="unique">`Map::unique()`</a>
 
 ```php
-Map::unique(int $flags)
+Map::unique(int $flags): Collection
 ```
 
 *Removes duplicate values from the collection*</br>
@@ -861,7 +861,7 @@ _The filtered collection_
 ## <a name="unshift">`Map::unshift()`</a>
 
 ```php
-Map::unshift(mixed $element)
+Map::unshift(mixed $element): int
 ```
 
 *Prepend an element to the beginning of the collection.*</br>
@@ -889,7 +889,7 @@ _The new number of elements in the collection._
 ## <a name="valid">`Map::valid()`</a>
 
 ```php
-Map::valid()
+Map::valid(): boolean
 ```
 
 *Checks if current position is valid*</br>
@@ -914,7 +914,7 @@ _true on success or false on failure._
 ## <a name="walk">`Map::walk()`</a>
 
 ```php
-Map::walk(callable $callback, mixed|null $userdata)
+Map::walk(callable $callback, mixed|null $userdata): bool
 ```
 
 *Apply a user supplied function to each element of the collection.*</br>
@@ -977,4 +977,4 @@ _(always true)_
 
 [&laquo; Back to README](/README.md)
 
-<!-- Generated: 2025-11-21 12:56:43 +01:00 -->
+<!-- Generated: 2025-11-25 18:47:26 +01:00 -->

@@ -15,7 +15,7 @@ use Yannoff\Component\Collections\Implementation\ArrayAccessTrait;
 ## <a name="offsetExists">`ArrayAccessTrait::offsetExists()`</a>
 
 ```php
-ArrayAccessTrait::offsetExists(mixed $offset)
+ArrayAccessTrait::offsetExists(mixed $offset): boolean
 ```
 
 *Check wether the given offset exists in the collection*</br>
@@ -41,7 +41,7 @@ _true on success or false on failure._
 ## <a name="offsetGet">`ArrayAccessTrait::offsetGet()`</a>
 
 ```php
-ArrayAccessTrait::offsetGet(mixed $offset)
+ArrayAccessTrait::offsetGet(mixed $offset): mixed
 ```
 
 *Get the element at the given offset*</br>
@@ -150,4 +150,4 @@ $offset|[mixed][php:mixed]|The offset to unset.
 
 [&laquo; Back to README](/README.md)
 
-<!-- Generated: 2025-11-21 12:56:43 +01:00 -->
+<!-- Generated: 2025-11-25 18:47:26 +01:00 -->
