@@ -205,6 +205,34 @@ _The last element or **false** if collection is empty_
 
 <br/><br/>
 
+## <a name="explode">`Collection::explode()`</a>
+
+```php
+Collection::explode(string $separator, string $string, int $limit): Collection
+```
+
+*Build a collection of elements by splitting the given input string*</br>
+
+
+> access: public <br/>
+
+### Arguments
+
+Name|Type|Description
+----|----|-----------
+$separator|[string][php:string]|The boundary string.
+$string|[string][php:string]|The input string.
+$limit|[int][php:int]|Optional max number of elements to return (with the last element containing the rest of the input string)<br/>
+
+### Return value
+
+_The stack of resulting strings_
+
+> type: [Collection](/doc/api/Collection.md)
+
+
+<br/><br/>
+
 ## <a name="filter">`Collection::filter()`</a>
 
 ```php
@@ -943,14 +971,17 @@ _(always true)_
 [php:RuntimeException]: https://www.php.net/manual/class.runtimeexception.php "PHP Built-in: RuntimeException"
 [php:Reflector]: https://www.php.net/manual/class.reflector.php "PHP Built-in: Reflector"
 [php:ReflectionClass]: https://www.php.net/manual/class.reflectionclass.php "PHP Built-in: ReflectionClass"
-[php:ReflectionFunction]: https://www.php.net/manual/class.reflectionfunction.php "PHP Built-in: ReflectionFunction"
-[php:ReflectionProperty]: https://www.php.net/manual/class.reflectionproperty.php "PHP Built-in: ReflectionProperty"
-[php:ReflectionMethod]: https://www.php.net/manual/class.reflectionmethod.php "PHP Built-in: ReflectionMethod"
+[php:ReflectionClassConstant]: https://www.php.net/manual/class.reflectionclassconstant.php "PHP Built-in: ReflectionClassConstant"
 [php:ReflectionConstant]: https://www.php.net/manual/class.reflectionconstant.php "PHP Built-in: ReflectionConstant"
+[php:ReflectionException]: https://www.php.net/manual/class.reflectionexception.php "PHP Built-in: ReflectionException"
+[php:ReflectionFunction]: https://www.php.net/manual/class.reflectionfunction.php "PHP Built-in: ReflectionFunction"
+[php:ReflectionMethod]: https://www.php.net/manual/class.reflectionmethod.php "PHP Built-in: ReflectionMethod"
+[php:ReflectionProperty]: https://www.php.net/manual/class.reflectionproperty.php "PHP Built-in: ReflectionProperty"
+[php:ReflectionParameter]: https://www.php.net/manual/class.reflectionparameter.php "PHP Built-in: ReflectionParameter"
 [php:StdClass]: https://www.php.net/manual/class.stdclass.php "PHP Built-in: StdClass"
 [php:Throwable]: https://www.php.net/manual/class.throwable.php "PHP Built-in: Throwable"
 [php:Traversable]: https://www.php.net/manual/class.traversable.php "PHP Built-in: Traversable"
 
 [&laquo; Back to README](/README.md)
 
-<!-- Generated: 2025-11-25 18:47:26 +01:00 -->
+<!-- Generated: 2025-12-19 20:31:11 +01:00 -->

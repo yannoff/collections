@@ -280,6 +280,22 @@ class Collection implements ArrayAccess, Iterator, Countable
     }
 
     /**
+     * Build a collection of elements by splitting the given input string
+     *
+     * @param string $separator The boundary string.
+     * @param string $string    The input string.
+     * @param int    $limit     Optional max number of elements to return (with the last element containing the rest of the input string)
+     *
+     * @return Collection The stack of resulting strings
+     */
+    static public function explode($separator, $string, $limit = PHP_INT_MAX)
+    {
+        $elements = explode($separator, $string, $limit);
+
+        return new static($elements);
+    }
+
+    /**
      * Return all the collection elements.
      *
      * @return array

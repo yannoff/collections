@@ -86,6 +86,7 @@ Array / Collection method equivalences:
 |array_unique($array, $flags)|$collection->unique($flags)|
 |array_unshift(&$array, $element)|$collection->unshift($element)|
 |array_walk(&$array, $callback, $userdata)|$collection->walk($callback, $userdata)|
+|explode($separator, $strint, $limit)|Collection::explode($separator, $strint, $limit)|
 |current(&$array)|$collection->current()|
 |end(&$array)|$collection->end()|
 |next(&$array)|$collection->next()|
